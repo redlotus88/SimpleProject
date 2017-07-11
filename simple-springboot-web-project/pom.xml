@@ -19,6 +19,12 @@
 	</parent>
 	<dependencies>
 		<dependency>
+	    	<groupId>org.apache.tomcat</groupId>
+		    <artifactId>tomcat-servlet-api</artifactId>
+		    <version>8.0.36</version>
+		    <scope>provided</scope>
+		</dependency>
+		<dependency>
 		    <groupId>javax.servlet</groupId>
 		    <artifactId>javax.servlet-api</artifactId>
 		    <scope>provided</scope>
@@ -32,6 +38,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+		        <exclusion>
+		            <groupId>org.springframework.boot</groupId>
+		            <artifactId>spring-boot-starter-tomcat</artifactId>
+		        </exclusion>
+		    </exclusions>
 		</dependency>
 	</dependencies>
 </project>
